@@ -45,7 +45,7 @@
     "@babel/core": "^7.26.0",
     "@babel/preset-react": "7.24.7",
     "bluebird": "^3.5.3",
-    "browser-sync": "^2.29.3",
+    "browser-sync": "^2.26.3",
     "chokidar": "^2.0.4",
     "common-js-file-extensions": "^1.0.2",
     "find-root": "^1.1.0",

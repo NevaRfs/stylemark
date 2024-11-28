@@ -7,7 +7,7 @@ var fs = require('fs-extra');
 var path = require('path');
 var Handlebars = require('./handlebars');
 var marked = require('./marked');
-var babel = require('babel-core');
+var babel = require('@babel/core');
 
 var docTemplate = fs.readFileSync(path.resolve(__dirname, 'templates/doc.handlebars'), 'utf8');
 var exampleTemplate = fs.readFileSync(path.resolve(__dirname, 'templates/example.handlebars'), 'utf8');
@@ -220,7 +220,7 @@ class Generator {
 		_.forEach(doc.examples, example => {
 			example.blocks = _.map(example.blocks, block => {
 				if (block.language === 'jsx') {
-					block.content = babel.transform(block.content, { presets: ['babel-preset-react'] }).code;
+					block.content = babel.transform(block.content, { presets: ['@babel/preset-react'] }).code;
 
 					// Prefixes React.createElement(Component) component names with the exported library name (ie. Library.Component)
 					block.content = block.content.replace(
